@@ -75,6 +75,8 @@ type FcmResponseStatus struct {
 type NotificationPayload struct {
 	Title        string `json:"title,omitempty"`
 	Body         string `json:"body,omitempty"`
+	Link         string `json:"link,omitempty"`
+	Image        string `json:"image,omitempty"`
 	Icon         string `json:"icon,omitempty"`
 	Sound        string `json:"sound,omitempty"`
 	Badge        string `json:"badge,omitempty"`
