@@ -49,7 +49,7 @@ type FcmMsg struct {
 	CollapseKey           string              `json:"collapse_key,omitempty"`
 	Priority              string              `json:"priority,omitempty"`
 	Notification          NotificationPayload `json:"notification,omitempty"`
-	ContentAvailable      string              `json:"content_available,omitempty"`
+	ContentAvailable      bool                `json:"content_available,omitempty"`
 	DelayWhileIdle        bool                `json:"delay_while_idle,omitempty"`
 	TimeToLive            int                 `json:"time_to_live,omitempty"`
 	RestrictedPackageName string              `json:"restricted_package_name,omitempty"`
@@ -258,7 +258,7 @@ func (this *FcmClient) SetNotificationPayload(payload *NotificationPayload) *Fcm
 // in the APNS payload. When a notification or message is sent and this is set
 // to true, an inactive client app is awoken. On Android, data messages wake
 // the app by default. On Chrome, currently not supported.
-func (this *FcmClient) SetContentAvailable(isContentAvailable string) *FcmClient {
+func (this *FcmClient) SetContentAvailable(isContentAvailable bool) *FcmClient {
 
 	this.Message.ContentAvailable = isContentAvailable
 
